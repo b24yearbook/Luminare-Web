@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Batch Gallery - Luminare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="batch_gallery.css">
+    <script src="batch_gallery.js"></script>
+    <script src="/scripts/passwordValidation.js"></script>
+</head>
+<body onload="setup(0)">
+    <div class="navBar ver2">
+        <a href="../homepage/homepage.html">
+          <div class="logo">luminare</div>
+        </a>
+        <div class="flex-spacer"></div>
+        <div class="navBar-hamburger-desktop">
+            <a href="../grads/grads_by_section.html">Graduates</a>
+            <a href="../indiv_spread/indiv_spread.html">Individuals</a>
+            <a href="../faculty/faculty_units.html">Faculty</a>
+            <a href="../gallery/batch_gallery.html" class="selected">Gallery</a>
+        </div>
+        <div class="navBar-hamburger-mobile">
+            <div class="navBar-hamburger-mobile-burger">
+                <div class="burger"></div>
+            </div>
+            <div class="navBar-hamburger-mobile-links">
+                <a href="../grads/grads_by_section.html">Graduates</a>
+                <a href="../indiv_spread/indiv_spread.html">Individuals</a>
+                <a href="../faculty/faculty_units.html">Faculty</a>
+                <a href="../gallery/batch_gallery.html" class="selected">Gallery</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mainSection">
+        <div class="topSection">
+            <div class="bgSlash">
+                <div class="starBorder-top"></div>
+                <div class="starBorder-bottom"></div>
+            </div>
+            <h1 class="header-glow">The Pictures, Memories</h1>
+            <p>of Batch 2024</p>
+        </div>
+
+        <div class="arrowLeft" onclick="updatePage(-1)"><p class="arrowChar"><</p></div>
+        <div class="arrowRight" onclick="updatePage(1)"><p class="arrowChar">></p></div>
+
+        <div class="year">
+            <h2 class="header-glow">year</h2>
+        </div>
+
+        <div id="gallery">
+            <!--
+            <div class="item">
+                <a>
+                    <img src="../../resources/img/PLACEHOLDER.png" alt="Batch Picture" class="picture">
+                </a>
+                <p class="pictureName">name</p>
+            </div>
+            -->
+        </div>
+
+    </div>
+</body>
+</html>

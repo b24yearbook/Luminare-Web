@@ -1,0 +1,37 @@
+.sectionIcon {
+    height: 1em;
+    margin-right: 25px;
+}
+.sectionIcon.small {
+    height: 0.5em;
+}
+
+#mainSection{
+    margin-top: 50px;
+}
+
+#students{
+    display: flex;
+    /*float: left;*/
+    column-gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.student{
+    display: flex;
+    width: 200px;
+    /*aspect-ratio: 1/1;*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.studentProfile{
+    height: 200px;
+}
+
+
+
+
+

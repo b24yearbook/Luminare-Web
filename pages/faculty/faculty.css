@@ -1,0 +1,35 @@
+#faculties {
+    display: flex;
+    column-gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.faculty {
+    margin: 50px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    column-gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.facultyPicture {
+    width: 300px;
+    float: left;
+    margin-right: 30px;
+}
+
+.facultyDesc {
+    float: left;
+}
+
+.facultyName {
+    font-size: 2em;
+}
+
+p {
+    /*width: 1em;*/
+}

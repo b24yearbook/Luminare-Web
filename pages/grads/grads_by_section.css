@@ -1,0 +1,48 @@
+.mainSection {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.bySectionSection {
+    max-width:1000px;
+}
+.gradeLevel {
+    display: flex;
+    width:100%;
+}
+.gradeLevel:nth-of-type(odd) .left, .gradeLevel:nth-of-type(even) .right {
+    padding:40px 0;
+}
+.gradeLevel:nth-of-type(even) .left, .gradeLevel:nth-of-type(odd) .right {
+    background-image:url(../../resources/img/stars-curve.png);
+    background-size:cover;
+    background-position:center;
+    mask-image:linear-gradient(0deg, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.gradeLevel:nth-of-type(even) .left {
+    transform:scaleX(-1);
+}
+
+.sectionsCont {
+    display: flex;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.sectionIcon {
+    aspect-ratio: 1 / 1;
+}
+.sectionName {
+    text-align:center;
+    margin:0;
+}
+.left, .right {
+    text-align:center;
+    flex-grow:1;
+    flex-basis:0;
+}
+.gradeText {
+    margin:0;
+    margin-bottom:5px;
+}

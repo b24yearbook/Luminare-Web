@@ -1,0 +1,360 @@
+/*----------------------------------------- 
+  FOCUSED STYLESHEET FOR indiv_spread.css
+-------------------------------------------*/
+/* -------------- IMPORTS ---------------- */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* -------------- GENERAL STYLES ---------------- */
+.mainSection {
+  padding-top:0;
+  padding-bottom:80px;
+}
+.brightSection, .personalInfoSection {
+  min-height:96vh;
+  box-sizing:border-box;
+  padding:20px;
+  max-width:1000px;
+}
+.writeupSection {
+  height:auto;
+  margin:20px 20px;
+  box-sizing:border-box;
+  max-width:1000px;
+  backdrop-filter:blur(8px);
+  background-color:rgba(200, 90, 255, 0.1);
+  box-shadow:0 10px 10px rgb(0,0,0,0.5);
+  border-radius:5px;
+  padding:20px;
+}
+.writeupSection * {
+  font-weight:bold;
+}
+.brightSection {
+  padding-top:50px;
+  background-color:red;
+  background-image:linear-gradient(30deg,
+      var(--c-1) 15%, 
+      var(--c-2) 30%, 
+      var(--c-3) 45%, 
+      var(--c-4) 60%, 
+      var(--c-5) 75%, 
+      var(--c-6) 90%,
+      var(--c-1) 100%
+  );
+  box-shadow:0 0 10px var(--c-1),
+             0 0 3px var(--c-1);
+  display:flex;
+  flex-direction:column;
+}
+.image1 {
+  background-image:url(temp/LANCE_TOGA.jpg);
+}
+.image2 {
+  background-image:url(temp/LANCE_BARONG.jpg);
+}
+.image3 {
+  background-image:url(temp/LANCE_SEMIFORMAL.jpg);
+}
+.image4 {
+  background-image:url(temp/LANCE_CREATIVE.jpg);
+}
+.images {
+  display:flex;
+  overflow-x:scroll;
+  overflow-y:hidden;
+  position:relative;
+  left:-20px;
+  width:calc(100%);
+  padding:0 20px;
+  margin-bottom:20px;
+  /* mask-image:linear-gradient(0deg, transparent 2%, black 5%, black 95%, transparent 98%); */
+}
+.images > div {
+  height:60vh;
+  aspect-ratio:6/8.5;
+  margin-left:auto;
+  margin-right:auto;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.brightSection h1, .brightSection p {
+  line-height:0.8em;
+  margin:10px 0;
+  color:black;
+}
+.brightSection p {
+  margin:0;
+  font-weight:bold;
+}
+.name {
+  position: relative;
+  display:inline-block;
+}
+.stylizedName {
+  width:100%;
+  min-height:10vh;
+  aspect-ratio:96/30;
+  background-image:url(./temp/LANCE_StylizedName.png);
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  margin-bottom:20px;
+  font-family: "Great Vibes";
+  font-size: 10em;
+  filter:invert(1) drop-shadow(0 0 5px white);
+}
+.personalInfoSection {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.personalInfoSection h3 {
+  margin-bottom:5px;
+}
+.starsBg {
+  background-image:url(../../resources/img/stars.png);
+  background-size:30%;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  height:inherit;
+  position:absolute;
+  z-index:-1;
+  mask-image:radial-gradient(ellipse, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%)
+}
+.imageMain, .imageSeries {
+  background-size:cover;
+  background-position:center;
+}
+.imageMain {
+  width:300px;
+  aspect-ratio:3/4;
+  border-radius:10px;
+}
+.imageSeries {
+  width:300px;
+  aspect-ratio:3/5;
+}
+.imageSeriesContainer {
+  display:flex;
+  flex-wrap:wrap;
+}
+.nameHeader {
+  text-shadow:-5px 5px 0 var(--c-accent-ff-1);
+  margin-bottom:0;
+}
+.writeupHeader {
+  color:var(--c-accent-f-1);
+}
+.writerName {
+  color:var(--c-accent-f-1);
+  font-weight:bold;
+  font-style:italic;
+}
+.quote {
+  font-weight:bold;
+  font-style:italic;
+  color:var(--c-accent-f-1);
+  background-image:linear-gradient(30deg,
+      var(--c-1) 15%, 
+      var(--c-2) 30%, 
+      var(--c-3) 45%, 
+      var(--c-4) 60%, 
+      var(--c-5) 75%, 
+      var(--c-6) 90%,
+      var(--c-1) 100%
+  );
+  box-shadow:0 0 10px var(--c-1),
+             0 0 3px var(--c-1);
+  color:black;
+  padding:20px;
+  margin-left:-20px;
+  margin-right:-20px;
+}
+.extracurriculars {
+  backdrop-filter:blur(8px);
+  background-color:rgba(200, 90, 255, 0.1);
+  box-shadow:0 10px 10px rgb(0,0,0,0.5);
+  border-radius:5px;
+  padding:20px 20px;
+}
+.extracurriculars * {
+  font-weight:bold;
+  margin:10px 0;
+  border-bottom:2px solid var(--c-accent1);
+  text-align:center;
+}
+.constellation {
+  --img_url:url(temp/CONSTELLATION_PLACEHOLDER.png);
+  background-image:var(--img_url), radial-gradient(circle, rgba(255,248,179,0.5) 0%, rgba(0,0,0,0) 70%);
+  width:25vw;
+  max-width:25vh;
+  aspect-ratio:1/1;
+  background-size:contain;
+  position:relative;
+  background-repeat:no-repeat;
+}
+.constellationName {
+  position:absolute;
+  top:100%;
+  margin:0;
+  left:50%;
+  transform:translatex(-50%);
+  font-weight:bold;
+  text-align:center;
+}
+.constellationSection {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:60px;
+  column-gap:2vw;
+  padding:0 20px;
+  box-sizing:border-box;
+}
+.pages {
+  border:1px solid rgba(255,255,255,0.5);
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.arrowLeft, .arrowRight {
+  font-size:50px;
+  font-weight:bold;
+  color:white;
+  position:fixed;
+  top:50%;
+  user-select:none;
+  transition:0.3s filter;
+  z-index:100;
+  filter:drop-shadow(0 0 5px black) drop-shadow(0 0 5px black) drop-shadow(0 0 10px black);
+}
+.arrowLeft:hover, .arrowRight:hover {
+  filter:drop-shadow(0 0 5px white) drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);
+}
+.arrowChar, .arrowName {
+  margin:0;
+}
+.arrowChar {
+  line-height:30px;
+}
+.arrowName {
+  font-size:0.5em;
+}
+.arrowLeft {
+  left:10px;
+  text-align:left;
+}
+.arrowRight {
+  right:10px;
+  text-align:right;
+}
+.imageSeriesContainer {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.image-card{
+  border-radius: 1vmin;
+  width:300px;
+  position:absolute;
+  aspect-ratio:3/4;
+  transition: transform 800ms cubic-bezier(.05, .43, .25, .95);
+  background-color: rgba(0, 0, 0, 0);
+  background-size: cover;
+}
+
+.image-card:nth-child(1){
+  transform: translateX(-10%) rotate(-3deg);
+  background-image:url(temp/LANCE_CREATIVE.jpg);
+}
+
+.image-card:nth-child(2){
+  background-image:url(temp/LANCE_BARONG.jpg);
+}
+
+.image-card:nth-child(3){
+  transform: translateX(10%) rotate(3deg);
+  background-image:url(temp/LANCE_SEMIFORMAL.jpg);
+}
+
+.image-card:nth-child(4){
+  transform: translateX(20%) rotate(5deg);
+  background-image:url(temp/LANCE_TOGA.jpg);
+}
+.card-group:hover > .image-card:nth-child(1){
+  transform: translateX(-70%) translateY(15%) rotate(-20deg);
+}
+.card-group:hover > .image-card:nth-child(2){
+  transform: translate(-25%) translateY(5%) rotate(-8deg);
+}
+
+.card-group:hover > .image-card:nth-child(3){
+  transform: translate(25%) translateY(5%) rotate(8deg);
+}
+
+.card-group:hover > .image-card:nth-child(4){
+  transform: translate(70%) translateY(15%) rotate(20deg);
+}
+
+.studentInfo{
+  margin-top: 435px;
+}
+
+.vanish {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events:none;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events:all;
+}
+
+.sendTopButton .arrowChar {
+  transform:rotate(90deg);
+  width:22px;
+  left:16px;
+  position:relative;
+}
+.sendTopButton {
+  font-size:50px;
+  position:fixed;
+  z-index: 99;
+  left:50%;
+  bottom:10px;
+  transform:translatex(-50%);
+  font-weight:bold;
+  color:white;
+  transition:1s filter, opacity 0.5s;
+  filter:drop-shadow(0 0 5px black) drop-shadow(0 0 5px black) drop-shadow(0 0 10px black);
+}
+.sendTopButton:active {
+  transition:0s filter, opacity 0.5s;
+  filter:drop-shadow(0 0 5px white) drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);
+}
+.gradeSections {
+  filter:drop-shadow(0 0 10px black);
+  display:flex;
+  margin-top:20px;
+}
+.sectionIcon {
+  background-image:var(--img_url);
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-repeat:none;
+  background-position:center;
+}
+.sectionIconLinkWrapper {
+  width:100%;
+  max-width:100px;
+  aspect-ratio:1/1;
+}

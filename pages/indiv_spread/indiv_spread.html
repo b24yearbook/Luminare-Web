@@ -1,0 +1,123 @@
+<!--
+    What's supposed to be displayed here?
+    Based on wireframe, Silid of the graduate on top, center left is one of their pics,  
+    center right is text with their full name, grade 11 and 12 block, their cores and electives, 
+    and their yearbook quote. Also left and right arrow buttons on the left and right for navigating through the different indiv spread pages.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Individual Spreads - Luminare</title>
+  <link rel="stylesheet" href="../../main.css">
+  <link rel="stylesheet" href="indiv_spread.css"> 
+  <script src="/scripts/passwordValidation.js"></script>
+</head>
+<body>
+  <script src="/scripts/decryptJSON.js"></script>
+  <div class="navBar ver2">
+      <a href="../homepage/homepage.html">
+        <div class="logo">luminare</div>
+      </a>
+      <div class="flex-spacer"></div>
+      <div class="navBar-hamburger-desktop">
+          <a href="../grads/grads_by_section.html">Graduates</a>
+          <a href="../indiv_spread/indiv_spread.html" class="selected">Individuals</a>
+          <a href="../faculty/faculty_units.html">Faculty</a>
+          <a href="../gallery/batch_gallery.html">Gallery</a>
+      </div>
+      <div class="navBar-hamburger-mobile">
+          <div class="navBar-hamburger-mobile-burger">
+            <div class="burger"></div>
+          </div>
+          <div class="navBar-hamburger-mobile-links">
+            <a href="../grads/grads_by_section.html">Graduates</a>
+            <a href="../indiv_spread/indiv_spread.html" class="selected">Individuals</a>
+            <a href="../faculty/faculty_units.html">Faculty</a>
+            <a href="../gallery/batch_gallery.html">Gallery</a>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="starsBg"></div>
+  <div class="mainSection">
+    <!-- Add background blur gradients -->
+    <div class="arrowLeft" id="arrowLeft">
+      <p class="arrowChar"><</p>
+      <p class="arrowName">PREV</p>
+    </div>
+    <div class="arrowRight" id="arrowRight">
+      <p class="arrowChar">></p>
+      <p class="arrowName">NEXT</p>
+    </div>
+
+    <div class="brightSection">
+      <div class="images">
+        <div class="image1" id="slide-1"></div>
+        <div class="image2" id="slide-2"></div>
+        <div class="image3" id="slide-3"></div>
+        <div class="image4" id="slide-4"></div>
+      </div>
+      <h1 class="studentName" id="studentName">Student Name</h1>
+      <p class="silidName">Silid Name</p>
+      <div class="gradeSections">
+        <div id="secImage7" class="sectionIcon"></div>
+        <div id="secImage8" class="sectionIcon"></div>
+        <div id="secImage9" class="sectionIcon"></div>
+        <div id="secImage10" class="sectionIcon"></div>
+        <div id="secImage11" class="sectionIcon"></div>
+        <div id="secImage12" class="sectionIcon"></div>
+      </div>
+    </div>
+    <div class="personalInfoSection">
+      <div class="stylizedName" id="stylizedName"></div>
+      <h3 class="header-glow">Constellations</h3>
+      <div class="constellationSection">
+        <div class="constellation" id="constellation1">
+          <p class="constellationName" id="constellationName1">Constellation</p>
+        </div>
+        <div class="constellation" id="constellation2">
+          <p class="constellationName" id="constellationName2">Constellation</p>
+        </div>
+        <div class="constellation" id="constellation3">
+          <p class="constellationName" id="constellationName3">Constellation</p>
+        </div>
+      </div>
+      <h3 class="header-glow">Extracurriculars</h3>
+      <div class="extracurriculars" id="extracurriculars">
+        
+      </div>
+      <p class="quote" id="quote"></p>
+    </div>
+    <div class="writeupSection pageOne">
+      <p class="writeup">
+        Write Up 1
+      </p>
+      <p class="writerName header-glow">- Writers</p>
+    </div>
+    <div class="writeupSection pageTwo">
+      <p class="writeup">
+        Write Up 1
+      </p>
+      <p class="writerName header-glow">- Writers</p>
+    </div>
+
+    <div class="pages debug-kill">
+        <div class="card-group">
+          <div class="image-card"></div>
+          <div class="image-card"></div>
+          <div class="image-card"></div>
+          <div class="image-card"></div>
+        </div>
+    </div>
+  </div>
+
+  <div class="sendTopButton">
+    <p class="arrowChar"><</p>
+    <p class="arrowName">TOP</p>
+  </div>
+</body>
+<script src="indiv_spread.js"></script> 
+</html>

@@ -1,0 +1,45 @@
+.arrowLeft, .arrowRight {
+    font-size:50px;
+    font-weight:bold;
+    color:white;
+    position:fixed;
+    top:50%;
+    user-select:none;
+    transition:0.3s filter;
+    filter:drop-shadow(0 0 5px black) drop-shadow(0 0 5px black) drop-shadow(0 0 10px black);
+}
+.arrowLeft:hover, .arrowRight:hover {
+    filter:drop-shadow(0 0 5px white) drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);
+}
+.arrowChar, .arrowName {
+    margin:0;
+}
+.arrowName {
+    font-size:0.5em;
+}
+.arrowLeft {
+    left:10px;
+    text-align:left;
+}
+.arrowRight {
+    right:10px;
+    text-align:right;
+}
+
+#gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.item {
+    float: left;
+    width: 180px;
+    margin: 10px 60px;
+}
+.item img {
+    width: 100%;
+}
+.pictureName {
+    padding: 1px;
+    text-align: center;
+}

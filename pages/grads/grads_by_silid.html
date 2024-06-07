@@ -1,0 +1,48 @@
+<!--
+    layout is the same as faculty, content will be generated via javascript maybe
+-->
+
+<html>
+<head>
+    <title>Graduates by Silid - Luminare</title>
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="grads_by_silid.css">
+    <script src="grads_by_silid.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/scripts/passwordValidation.js"></script>
+</head>
+<body onload="setup()">
+    <script src="/scripts/decryptJSON.js"></script>
+    <script src="/scripts/staticrypt.js"></script>
+    <div class="navBar ver2">
+        <a href="../homepage/homepage.html">
+            <div class="logo">luminare</div>
+        </a>
+        <div class="flex-spacer"></div>
+        <div class="navBar-hamburger-desktop">
+            <a href="../grads/grads_by_section.html" class="selected">Graduates</a>
+            <a href="../indiv_spread/indiv_spread.html">Individuals</a>
+            <a href="../faculty/faculty_units.html">Faculty</a>
+            <a href="../gallery/batch_gallery.html">Gallery</a>
+        </div>
+        <div class="navBar-hamburger-mobile">
+            <div class="navBar-hamburger-mobile-burger">
+                burger
+            </div>
+            <div class="navBar-hamburger-mobile-links">
+              <a href="../grads/grads_by_section.html" class="selected">Graduates</a>
+              <a href="../indiv_spread/indiv_spread.html">Individuals</a>
+              <a href="../faculty/faculty_units.html">Faculty</a>
+              <a href="../gallery/batch_gallery.html">Gallery</a>
+            </div>
+        </div>
+    </div>
+    <div class="mainSection">
+        <div class="section">
+            <h1 class="header-glow">The Graduates</h1>
+            <p>of Batch 2024</p>
+        </div>
+        <div id="silids"></div>
+    </div>
+</body>
+</html>
