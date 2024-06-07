@@ -8,7 +8,7 @@ function login() {
             
     let password = document.getElementById("password").value;
     let hashPass = hashPassword(password, SALT);
-    hashPass.then(p => decode(testCase, p, SALT)).then(
+    hashPass.then(p => {hashPass = p; return decode(testCase, p, SALT);}).then(
     result => {
 
     if (result.success) {

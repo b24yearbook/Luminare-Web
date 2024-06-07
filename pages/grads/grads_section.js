@@ -29,6 +29,7 @@ var section = siteId[0] == "1"? siteId.slice(2) : siteId.slice(1);
 async function changeStuff(info) { // changes the html contents with student info
     // Initialize students with the necessary grade section, and
     // Check if the json list is accessible
+    console.log(info);
     try{
         var students = info[grade][section]; 
         students[0];}
@@ -69,7 +70,7 @@ async function changeStuff(info) { // changes the html contents with student inf
     // Get the list of ALL students since we need the
     // Thumbnail(one of the four pics) and Name of the students in the section 
     // since we only have their student ids
-    let grads = await fetch("grads.json").then(f => f.text()).then(i => JSON.parse(i));
+    let grads = await fetch("grads.json").then(f => f.text()).then(enc => decryption(enc)).then(i => JSON.parse(i));
 
     // Start creating all the elements containing students
     let counter = 1;
@@ -102,4 +103,9 @@ async function changeStuff(info) { // changes the html contents with student inf
 }   
 
 // actual running code of that async function changeStuff()
-fetch("grads_section.json").then(f => f.text()).then(i => changeStuff(JSON.parse(i)));
+
+fetch("grads_section.json").then(
+    f => f.text()).then(
+    enc => decryption(enc)).then(
+      i => changeStuff(JSON.parse(i)),
+      err => {failDec()}); 
