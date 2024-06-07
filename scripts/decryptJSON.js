@@ -13,5 +13,5 @@ async function decryption(content) {
 }
 function failDec() {
     alert("Please Login to Access!")
-    //window.location.replace('/');
+    window.location.replace('/');
 }
