@@ -1,4 +1,4 @@
 if (localStorage.getItem("passkey") == null) {
     alert("Please Login to Access!")
-    window.location.replace('/');
+    window.location.replace('Luminare-Web/');
 }
