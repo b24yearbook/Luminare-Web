@@ -9,7 +9,7 @@ var id = url[1];
 // Get data and do stuff with it
 fetch(GRADSJSON).then(
 f => f.text()).then(
-enc => decryption(enc)).then(
+enc => {console.log(decryption(enc)); return decryption(enc)}).then(
   i => changeStuff(JSON.parse(i)),
   err => {failDec()}); 
 
