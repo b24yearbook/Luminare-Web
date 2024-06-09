@@ -20,8 +20,9 @@ function changeStuff(info) {
   var student = info[id];
   if(typeof(student) == "undefined") id = loadBackup();
   if(!validateID(id) || typeof(info[id]) == "undefined") pageLoadFail();
-  else window.location.replace(`indiv_spread.html#${id}`);
+  window.location.replace(`indiv_spread.html#${id}`);
   student = info[id]
+  if(loadBackup() != id) window.location.reload();
   setBackup(id);
 
   // Get Silid
@@ -36,14 +37,27 @@ function changeStuff(info) {
   document.getElementById("studentName").innerHTML = student["Name"];
 
   // Get Stylized Name (if picture) or if not, set to whatever text is there.
-  fetch(encodeURI(student["Stylized Name"])).then(i=>{
-    console.log(i.status);
-    if (i.status != "404") document.getElementById("stylizedName").style.backgroundImage = `url(${encodeURI(student["Stylized Name"])})`;
-    else {
-      document.getElementById("stylizedName").innerHTML = student["Stylized Name"];
-      document.getElementById("stylizedName").style.backgroundImage = "none";
+  let useNN = false
+  try{
+  fetch(encodeURI(student["Stylized Name"])).then(
+    i=> document.getElementById("stylizedName").style.backgroundImage = `url(${encodeURI(student["Stylized Name"])})`,
+    err => {
+      useNN = true;
     }
-  });
+  );
+  }
+  catch(err){
+    useNN = true;
+  }
+  fetch("grads_nn.json").then(f => 
+    f.text()).then(enc => 
+    decode(enc)).then(i => 
+      JSON.parse(i)).then(nn => {console.log(nn);
+        document.getElementById("stylizedName").innerHTML = nn[student["Name"]]});
+  if(useNN) {
+    console.log(useNN);
+    document.getElementById("stylizedName").style.backgroundImage = "none";
+  }
 
   // Get Sections
   let gradeNo = 7;
@@ -147,3 +161,23 @@ function scrollFunction() {
     GTTButton.className = "sendTopButton show";
   }
 }
+
+stdShit = parseInt(localStorage.getItem("stdNo"));
+
+function prevStudent(){
+  stdShit = (stdShit < 11? "00": (stdShit < 101? "0" : "")) + (stdShit-1);
+  window.location.href = `indiv_spread.html#${stdShit}`;
+  window.location.reload();
+}
+function nextStudent(){
+  stdShit = (stdShit < 9? "00": stdShit < 99? "0" : "") + (stdShit+1);
+  window.location.href = `indiv_spread.html#${stdShit}`;
+  window.location.reload();
+}
+
+HALeft.className = "arrowLeft vanish";
+HARight.className = "arrowRight vanish";
+setTimeout(function() {
+  HALeft.className = "arrowLeft show";
+  HARight.className = "arrowRight show";
+}, 2000) 

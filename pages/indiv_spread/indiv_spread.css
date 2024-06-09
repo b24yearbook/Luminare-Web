@@ -47,16 +47,16 @@
   flex-direction:column;
 }
 .image1 {
-  background-image:url(temp/LANCE_TOGA.jpg);
+  
 }
 .image2 {
-  background-image:url(temp/LANCE_BARONG.jpg);
+  
 }
 .image3 {
-  background-image:url(temp/LANCE_SEMIFORMAL.jpg);
+  
 }
 .image4 {
-  background-image:url(temp/LANCE_CREATIVE.jpg);
+  
 }
 .images {
   display:flex;
@@ -94,8 +94,9 @@
 .stylizedName {
   width:100%;
   min-height:10vh;
+  text-align: center;
   aspect-ratio:96/30;
-  background-image:url(./temp/LANCE_StylizedName.png);
+  
   background-size:contain;
   background-position:center;
   background-repeat:no-repeat;
@@ -271,21 +272,21 @@
 
 .image-card:nth-child(1){
   transform: translateX(-10%) rotate(-3deg);
-  background-image:url(temp/LANCE_CREATIVE.jpg);
+  
 }
 
 .image-card:nth-child(2){
-  background-image:url(temp/LANCE_BARONG.jpg);
+  
 }
 
 .image-card:nth-child(3){
   transform: translateX(10%) rotate(3deg);
-  background-image:url(temp/LANCE_SEMIFORMAL.jpg);
+  
 }
 
 .image-card:nth-child(4){
   transform: translateX(20%) rotate(5deg);
-  background-image:url(temp/LANCE_TOGA.jpg);
+  
 }
 .card-group:hover > .image-card:nth-child(1){
   transform: translateX(-70%) translateY(15%) rotate(-20deg);
