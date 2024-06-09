@@ -230,7 +230,7 @@ a {
     mask-image:radial-gradient(transparent 30%, white 100%);
 }
 .section {
-    border-top:1px solid rgb(220,220,220);
+    /* border-top:1px solid rgb(220,220,220); */
     width:100%;
     min-height:75vh;
     display:flex;
