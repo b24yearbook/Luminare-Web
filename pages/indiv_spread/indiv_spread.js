@@ -40,7 +40,7 @@ function changeStuff(info) {
     console.log(i.status);
     if (i.status != "404") document.getElementById("stylizedName").style.backgroundImage = `url(${encodeURI(student["Stylized Name"])})`;
     else {
-      document.getElementById("stylizedName").innerHTML = student["Stylized Name"];
+      // document.getElementById("stylizedName").innerHTML = student["Stylized Name"];
       document.getElementById("stylizedName").style.backgroundImage = "none";
     }
   });
