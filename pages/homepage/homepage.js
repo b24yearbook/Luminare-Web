@@ -16,7 +16,7 @@ function ajkfhasjdfhsakgjh() {
 
     theDivInQuestion.innerHTML = `
         <div>
-            <a href="../grads/grads_by_silid.html"><h2 class="options">2024 Silids</h2></a>
+            <a href=""><h2 class="options">2024 Silids (Soon!)</h2></a>
         </div>
         <div>
             <a href="../grads/grads_by_section.html"><h2 class="options">2024 Through the Years</h2></a>
