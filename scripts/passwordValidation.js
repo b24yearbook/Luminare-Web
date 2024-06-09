@@ -3,7 +3,7 @@ const SALT = "7e7610a1628c19f6d53bfbaee6f92f59"
 
 if (localStorage.getItem("passkey") == null) {
     alert("Please Login to Access!")
-    window.location.replace('Luminare-Web/');
+    window.location.replace('/Luminare-Web/');
 }
 
 var hashPass = localStorage.getItem("passkey")
@@ -12,5 +12,5 @@ result => {
 
 if (result.success) {
     localStorage.setItem("passkey", hashPass);
-    window.open("pages/homepage/homepage.html", "_self");
+    window.open("/Luminare-Web/pages/homepage/homepage.html", "_self");
 }});
