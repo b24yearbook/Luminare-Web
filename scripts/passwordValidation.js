@@ -6,8 +6,8 @@ if (localStorage.getItem("passkey") == null) {
     window.location.replace('Luminare-Web/');
 }
 
-let hashPass = localStorage.getItem("passkey")
-hashPass.then(p => {hashPass = p; return decode(testCase, p, SALT);}).then(
+var hashPass = localStorage.getItem("passkey")
+decode(testCase, hashPass, SALT).then(
 result => {
 
 if (result.success) {

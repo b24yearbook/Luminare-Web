@@ -24,45 +24,70 @@ siteId = url.length > 1 ? url[1] : "Error!"; //Error handling in async function 
     // Assume siteId is of form AaBB..., where Aa is a number from 7 to 12, BB... is the section
 var grade = `Grade ${siteId[0] == "1"? siteId.slice(0, 2) : siteId[0]}`;
 var section = siteId[0] == "1"? siteId.slice(2) : siteId.slice(1);
+    // Assume siteId is a string representing the silid.
+var silid = siteId.replace("_", siteId.match("_") != null && (siteId[0] == "A" || siteId[0] == "G") ? ". " : " ");
 
 // asynchronous function declaration, uses grads_section.json as info
+var isSection = false;
 async function changeStuff(info) { // changes the html contents with student info
     // Initialize students with the necessary grade section, and
     // Check if the json list is accessible
     console.log(info);
+
     try{
         var students = info[grade][section]; 
-        students[0];}
+        students[0];
+        isSection = true;}
     catch(err){
         // If fail, go to backup
         try{
             [section, grade] = loadBackup();
             var students = info[grade][section];
             students[0]; //check if accessible
-            window.location.href = `grads_section.html#${grade.split(" ")[1]}${section}` // Send them to the backup page
+            isSection = true;
+            window.location.href = `grads_section.html#${grade.split(" ")[1]}${section}`; // Send them to the backup page
         }
-        catch(err) { // If still fails, send user out of the page
+        catch(err) { // If still fails, try to send them to silid
+
+    try{
+        var students = info[silid];
+        students[0];
+        isSection = false;}
+    catch(err){
+        // If fail, go to backup silid
+        try{
+            silid = localStorage.getItem("silid");
+            var students = info[silid];
+            students[0];
+            isSection = false;
+            window.location.href = `grads_section.html#${silid}`;}
+        catch(err) {
+            alert("Invalid Link!");
             var prevPage = window.location.href; // Initialize current href in caes going back does nothing
             window.history.back(); // Send user back
             
-            // If somehow you can't send the user back, send them to The Graduates
+            // If somehow you can't send the user back, send them to the homepage
             setTimeout(function(){ 
                 if (window.location.href == prevPage) {
-                    window.location.href = "grads_by_section.html"; 
+                    window.location.href = "../homepage/homepage.html"; 
                 }
             }, 500);
         }
-    }
+    }}}
 
     // Now that we have a valid grade section, set the backup
-    setBackup(section, grade)
+    if (isSection) setBackup(section, grade);
+    else localStorage.setItem("silid", silid);
     
     // First, set the inner HTML of the section header. 
     // A bit messy but the image is written in plain html here within the header element
     document.getElementById("sectionName").innerHTML = 
+    isSection ?
         `<img class="sectionIcon" alt="${grade} ${section} Icon" ` +
         `src="../../resources/img/icons/${grade.replace(" ", "%20")}/${section}.png">` + 
-        `${grade.split(" ")[1]} - ${section}`;
+        `${grade.split(" ")[1]} - ${section}`:
+    //else    
+        `Silid ${silid}`;
 
     // Initialize the section that contains all the students
     let studentsDiv = document.getElementById("students");
@@ -106,6 +131,6 @@ async function changeStuff(info) { // changes the html contents with student inf
 
 fetch("grads_section.json").then(
     f => f.text()).then(
-    enc => decryption(enc)).then(
+    enc => {console.log(decryption(enc));return decryption(enc);}).then(
       i => changeStuff(JSON.parse(i)),
       err => {failDec()}); 
