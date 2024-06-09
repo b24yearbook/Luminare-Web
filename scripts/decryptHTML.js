@@ -2,10 +2,6 @@
 
 // MAKE SURE TO NOT ENCRYPT THE <body></body> tags 
 
-statiCrypt = document.createElement("script");
-statiCrypt.src = "/scripts/staticrypt.js" 
-document.head.appendChild(statiCrypt);
-
 pass = localStorage.password;
 
 async function decryption(content) {

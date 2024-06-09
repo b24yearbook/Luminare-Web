@@ -40,7 +40,7 @@ async function setup() {
         d.className = "silid";
 
         let a = document.createElement("a");
-        a.href = "grads_section.html#" + s;
+        a.href = "grads_section.html#" + s.replace(" ", "_");
 
         let i = document.createElement("img");
         i.src = "../../resources/img/PLACEHOLDER2.png";

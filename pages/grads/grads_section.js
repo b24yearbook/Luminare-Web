@@ -20,12 +20,12 @@ function setBackup(section, grade) {
 
 // Get site ID to show the user what they want
 url = window.location.href.split("#")
-siteId = url.length > 1 ? url[1] : "Error!"; //Error handling in async function changeStuff()
+var siteId = url.length > 1 ? url[1] : "Error!"; //Error handling in async function changeStuff()
     // Assume siteId is of form AaBB..., where Aa is a number from 7 to 12, BB... is the section
 var grade = `Grade ${siteId[0] == "1"? siteId.slice(0, 2) : siteId[0]}`;
 var section = siteId[0] == "1"? siteId.slice(2) : siteId.slice(1);
     // Assume siteId is a string representing the silid.
-var silid = siteId.replace("_", siteId.match("_") != null && (siteId[0] == "A" || siteId[0] == "G") ? ". " : " ");
+var silid = siteId.replace("_", " ");
 
 // asynchronous function declaration, uses grads_section.json as info
 var isSection = false;
@@ -63,15 +63,15 @@ async function changeStuff(info) { // changes the html contents with student inf
             window.location.href = `grads_section.html#${silid}`;}
         catch(err) {
             alert("Invalid Link!");
-            var prevPage = window.location.href; // Initialize current href in caes going back does nothing
-            window.history.back(); // Send user back
+            //var prevPage = window.location.href; // Initialize current href in caes going back does nothing
+            //window.history.back(); // Send user back
             
             // If somehow you can't send the user back, send them to the homepage
-            setTimeout(function(){ 
-                if (window.location.href == prevPage) {
-                    window.location.href = "../homepage/homepage.html"; 
-                }
-            }, 500);
+            //setTimeout(function(){ 
+            //    if (window.location.href == prevPage) {
+            //        window.location.href = "../homepage/homepage.html"; 
+            //    }
+            //}, 500);
         }
     }}}
 

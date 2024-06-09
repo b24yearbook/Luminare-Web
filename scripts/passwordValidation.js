@@ -10,7 +10,8 @@ var hashPass = localStorage.getItem("passkey")
 decode(testCase, hashPass, SALT).then(
 result => {
 
-if (result.success) {
+if (!result.success) {
+    alert("Please Login to Access!")
     localStorage.setItem("passkey", hashPass);
-    window.open("/Luminare-Web/pages/homepage/homepage.html", "_self");
+    window.open("/Luminare-Web/", "_self");
 }});
