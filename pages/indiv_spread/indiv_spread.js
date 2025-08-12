@@ -35,8 +35,8 @@ function changeStuff(info) {
 
   // Change Name
   let name = student["Name"].split(",");
-  lastname = name[0];
-  firstname = name[1]
+  lastname = name[0].replace("�","Ñ");
+  firstname = name[1].replace("�","ñ");
   // document.getElementById("studentName").innerHTML = student["Name"];
   document.getElementById("lastName").innerHTML = lastname;
   document.getElementById("firstName").innerHTML = firstname;
