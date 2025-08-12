@@ -30,6 +30,19 @@
 }
 
 /* -------------- GENERAL STYLES ---------------- */
+@media screen and (max-width: 700px) {
+    body{
+        margin: 30px;
+        font-size:16px;
+    }
+    p {
+        padding: 0.5em;
+        font-size: 12px;
+    }
+    .section h3 {
+        font-size: 40px;
+    }
+}
 body {
     margin:0;
     font-size:20px;
@@ -75,6 +88,7 @@ a {
     color:rgb(255,255,255);
 }
 .logo{
+    padding-left: 0.2em;
     color: #f9c95e;
 }
 .navBar a[href="../homepage/homepage.html"]:hover{
@@ -101,6 +115,16 @@ a {
     color: inherit;
     text-shadow: none;
 }
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+.section-center {
+    justify-content: center;
+    align-items: center
+}
 
 
 /* -------------- NAVBAR STYLING ---------------- */
@@ -126,6 +150,7 @@ a {
     margin-top:3px;
 }
 .navBar {
+    padding-top: 0.4em;
     width:100vw;
     height:50px;
     position:fixed;
@@ -163,6 +188,7 @@ a {
 .navBar-hamburger-mobile {
     height:40px;
     width:40px;
+    padding-right: 0.2em;
     display:none;
 }
 .navBar-hamburger-desktop a, .navBar-hamburger-mobile a {
@@ -209,19 +235,20 @@ a {
 }
 
 .largeSection {
-    height:90vh;
+    height:100vh;
     width:100%;
     display:flex;
     justify-content:center;
     align-items:center;
 }
 .largeSection.landing {
+    display:flex;
+    flex-direction: column;
     background:radial-gradient(#190C35 0%, transparent 100%);
 }
 .largeSection.landing .stars {
     width:100%;
-    margin-top:-50px;
-    height:100%;
+    height:100vh;
     position:absolute;
     left:0;
     top:0;
@@ -234,13 +261,14 @@ a {
     width:100%;
     min-height:75vh;
     display:flex;
-    justify-content:flex-end;
-    align-items:flex-end;
+    justify-content:center;
+    align-items:center;
     flex-direction:column;
     padding:50px 10%;
     box-sizing:border-box;
 }
 .topSection {
+    margin-top: 15px;
     border-top:1px solid rgb(220,220,220);
     width:100%;
     min-height:50vh;
@@ -260,6 +288,7 @@ a {
         var(--c-6) 90%,
         var(--c-1) 100%
     );
+    filter: saturate(90%);
     position:relative;
     overflow:hidden;
 }
@@ -329,7 +358,7 @@ a {
 }
 .section h3 {
     z-index:1;
-    font-size:40px;
+    font-size:50px;
 }
 .section * {
     margin:0;

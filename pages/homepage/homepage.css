@@ -6,6 +6,9 @@
 }
 .prefaceText {
     max-width:70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 .landingHeader {
     position:absolute;
@@ -24,13 +27,19 @@
 .goAwayLeft{
     opacity: 0;
     filter:blur(5px);
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
     transition: all 1s;
 }
 .goAwayRight{
     opacity: 0;
     filter:blur(5px);
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
+    transition: all 1s;
+}
+.fade {
+    opacity: 0;
+    filter:blur(5px);
+    transform: translateX(-100%);
     transition: all 1s;
 }
 
@@ -60,7 +69,7 @@ p {
 }
 
 #graduates {
-    position: relative
+    position: relative;
 }
 
 .options {
@@ -118,15 +127,16 @@ div:nth-child(2) > h2 {
 
 @media screen and (max-width: 700px) {
     p {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .largeSection{
-        height: 50vh;
+        height: 100vh;
     }
 
     .prefaceText{
         max-width: 100%;
+        text-align: left;
     }
 
     div:nth-child(1) > a > h2 {

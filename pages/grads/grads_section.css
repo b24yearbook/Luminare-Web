@@ -6,6 +6,13 @@
     height: 0.5em;
 }
 
+#sectionName {
+    padding: 0.5em;
+    display: flex;
+    align-items: center; /* This centers the items vertically */
+    justify-content: center; 
+}
+
 #mainSection{
     margin-top: 50px;
 }
@@ -16,20 +23,30 @@
     column-gap: 50px;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0 1em;
 }
 
 .student{
+    padding-top: 20px;
+    padding-bottom: 5px;
     display: flex;
     width: 200px;
     /*aspect-ratio: 1/1;*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: box-shadow 0.1s ease-in-out;
 }
+
+.student:hover, .student:active {
+   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7); 
+}
+
 
 .studentProfile{
     height: 200px;
 }
+
 
 
 

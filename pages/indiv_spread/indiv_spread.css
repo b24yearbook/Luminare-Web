@@ -5,13 +5,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 /* -------------- GENERAL STYLES ---------------- */
+
+
+@media screen and (min-width: 1000px) {
+    .mainSection {
+        align-items:center; 
+    }
+}
+
 .mainSection {
   padding-top:0;
   padding-bottom:80px;
+  display: flex;
+  flex-direction: column;
+}
+.brightSection {
+  min-height:95vh;
 }
 .brightSection, .personalInfoSection {
-  min-height:96vh;
-  box-sizing:border-box;
+  /* box-sizing:border-box; */
   padding:20px;
   max-width:1000px;
 }
@@ -32,9 +44,8 @@
 .brightSection {
   padding-top:50px;
   background: rgb(33,17,63);
-  background: linear-gradient(180deg, rgba(33,17,63,1) 0%, rgba(79,6,191,1) 14%, rgba(255,183,85,1) 48%, rgba(255,151,109,1) 75%, rgba(33,17,63,1) 100%);
-  box-shadow:0 0 10px var(--c-1),
-             0 0 3px var(--c-1);
+  background: linear-gradient(180deg, rgba(33,17,63,1) 0%, rgba(255,183,85,1) 48%, rgba(255,151,109,1) 55%, rgba(33,17,63,1) 100%);
+  box-shadow:0 10px 0px var(--c-1),;
   display:flex;
   flex-direction:column;
 }
@@ -50,18 +61,58 @@
 .image4 {
   
 }
+/* The Scroll Container */
 .images {
+  margin-top: 20px;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  gap: 30px; 
+
+  padding: 0 10%;
+
+  /* --- Scroll Snap Behavior --- */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  /* --- Hide Scrollbar --- */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.images::-webkit-scrollbar {
+  display: none;
+}
+
+
+.images > div {
+
+  scroll-snap-align: center;
+
+  flex: 0 0 100%;
+
+  /* --- Sizing & Styling --- */
+  height: 60vh;
+  aspect-ratio: 6/8.5;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px 10px 0px 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+/* .images {
   display:flex;
   overflow-x:scroll;
   overflow-y:hidden;
   position:relative;
-  left:-20px;
   width:calc(100%);
-  padding:0 20px;
   margin-bottom:20px;
+  margin-top: 10px;
   /* mask-image:linear-gradient(0deg, transparent 2%, black 5%, black 95%, transparent 98%); */
-}
-.images > div {
+/* } */ 
+/* .images > div {
   height:60vh;
   aspect-ratio:6/8.5;
   margin-left:auto;
@@ -69,7 +120,8 @@
   background-size:contain;
   background-repeat:no-repeat;
   background-position:center;
-}
+  padding: 0px 10px;
+} */
 .brightSection h1, .brightSection p {
   line-height:0.8em;
   margin:10px 0;
@@ -78,6 +130,12 @@
 .brightSection p {
   margin:0;
   font-weight:bold;
+}
+.brightInfo {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .name {
   position: relative;
@@ -106,8 +164,24 @@
   margin-bottom:5px;
 }
 .studentName {
-  width: 100%;
-  font-size: 2em;
+  text-align: center;
+  font-size: 2.5em;
+  text-shadow: 5px 5px 3px rgba(33,17,63,1);
+}
+#lastName {
+  margin-top: 0.5em;
+  color: white;
+}
+#firstName {
+  color: white;
+}
+.silidName {
+  font-size: 24px;
+  padding-top: 20px;
+  font-style: italic;
+}
+#silidName {
+  color: white;
 }
 .starsBg {
   background-image:url(../../resources/img/stars.png);
@@ -166,6 +240,7 @@
   box-shadow:0 0 10px var(--c-1),
              0 0 3px var(--c-1);
   color:black;
+  filter: saturate(90%);
   padding:20px;
   margin-left:-20px;
   margin-right:-20px;
@@ -176,11 +251,13 @@
   box-shadow:0 10px 10px rgb(0,0,0,0.5);
   border-radius:5px;
   padding:20px 20px;
+  margin: 20px 0px;
 }
 .extracurriculars * {
   font-weight:bold;
   margin:10px 0;
-  border-bottom:2px solid var(--c-accent1);
+  border-bottom:1.5px solid var(--c-accent1);
+  padding: 4px;
   text-align:center;
 }
 .constellation {
@@ -204,13 +281,22 @@
 }
 .constellationSection {
   display:flex;
+  flex-direction: row;
   align-items:center;
   justify-content:center;
+  margin-top: 20px;
   margin-bottom:60px;
   column-gap:2vw;
   padding:0 20px;
   box-sizing:border-box;
 }
+
+@media screen and (max-width: 700px) {
+  .constellationSection {
+    flex-direction: column;
+  }
+}
+
 .pages {
   border:1px solid rgba(255,255,255,0.5);
   padding:30px;
@@ -223,6 +309,7 @@
   font-weight:bold;
   color:white;
   position:fixed;
+  padding: 0.2em;
   top:50%;
   user-select:none;
   transition:0.3s filter;
@@ -319,9 +406,13 @@
   transform:rotate(90deg);
   width:22px;
   left:16px;
-  position:relative;
+  padding: 10px 0px;
 }
 .sendTopButton {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size:50px;
   position:fixed;
   z-index: 99;
@@ -338,14 +429,16 @@
   filter:drop-shadow(0 0 5px white) drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);
 }
 .gradeSections {
+  width: 100%;
   filter:drop-shadow(0 0 10px black);
   display:flex;
-  margin-top:20px;
+  justify-content: center;
+  margin:20px 0px;
 }
 .sectionIcon {
   background-image:var(--img_url);
-  width:100%;
-  height:100%;
+  width:80%;
+  height:80%;
   background-size:cover;
   background-repeat:none;
   background-position:center;
@@ -354,4 +447,7 @@
   width:100%;
   max-width:100px;
   aspect-ratio:1/1;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -111,9 +111,13 @@ async function changeStuff(info) { // changes the html contents with student inf
 
         let profile = document.createElement("img");
         profile.className = "studentProfile";
+        let image = "../../resources/img/PLACEHOLDER.png";
         try {image = grads[s]["Toga Pic"]}
         catch(err) {image = "../../resources/img/PLACEHOLDER.png"} //handle this error properly in the future
         profile.src = image;
+        profile.onerror = function() { //fix to the placeholder image
+            this.src = "../../resources/img/stars.png";
+        };
 
         let name = document.createElement("p");
         name.className = "studentName";

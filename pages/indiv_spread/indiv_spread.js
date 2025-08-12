@@ -34,30 +34,59 @@ function changeStuff(info) {
   document.getElementById("slide-4").style.backgroundImage = `url(${student["Toga Pic"]})`;
 
   // Change Name
-  document.getElementById("studentName").innerHTML = student["Name"];
+  let name = student["Name"].split(",");
+  lastname = name[0];
+  firstname = name[1]
+  // document.getElementById("studentName").innerHTML = student["Name"];
+  document.getElementById("lastName").innerHTML = lastname;
+  document.getElementById("firstName").innerHTML = firstname;
 
   // Get Stylized Name (if picture) or if not, set to whatever text is there.
-  let useNN = false
-  try{
-  fetch(encodeURI(student["Stylized Name"])).then(
-    i=> document.getElementById("stylizedName").style.backgroundImage = `url(${encodeURI(student["Stylized Name"])})`,
-    err => {
-      useNN = true;
-    }
-  );
+  const stylizedNameElement = document.getElementById("stylizedName");
+  const imageUrl = encodeURI(student["Stylized Name"]);
+
+  // Check for a valid URL before fetching
+  if (!imageUrl || imageUrl.endsWith('undefined')) {
+      stylizedNameElement.style.display = 'none';
+  } else {
+      fetch(imageUrl)
+        .then(response => {
+          // fetch() succeeds even on a 404, so we must check if the response is OK.
+          if (response.ok) {
+            // Image was found, so set it as the background
+            stylizedNameElement.style.backgroundImage = `url(${imageUrl})`;
+          } else {
+            // Image was not found (e.g., 404 error), so hide the element
+            stylizedNameElement.style.display = 'none';
+          }
+        })
+        .catch(error => {
+          // This catches network errors
+          console.error("Failed to fetch stylized name image:", error);
+          stylizedNameElement.style.display = 'none';
+        });
   }
-  catch(err){
-    useNN = true;
-  }
-  fetch("grads_nn.json").then(f => 
-    f.text()).then(enc => 
-    decode(enc)).then(i => 
-      JSON.parse(i)).then(nn => {console.log(nn);
-        document.getElementById("stylizedName").innerHTML = nn[student["Name"]]});
-  if(useNN) {
-    console.log(useNN);
-    document.getElementById("stylizedName").style.backgroundImage = "none";
-  }
+  // let useNN = false;
+  // try{
+  // fetch(encodeURI(student["Stylized Name"])).then(
+  //   i=> document.getElementById("stylizedName").style.backgroundImage = `url(${encodeURI(student["Stylized Name"])})`,
+  //   err => {
+  //     useNN = true;
+  //   }
+  // );
+  // }
+  // catch(err){
+  //   useNN = true;
+  // }
+  // fetch("grads_nn.json").then(f => 
+  //   f.text()).then(enc => 
+  //   decode(enc)).then(i => 
+  //     JSON.parse(i)).then(nn => {console.log(nn);
+  //       document.getElementById("stylizedName").innerHTML = nn[student["Name"]]});
+  // if(useNN) {
+  //   console.log(useNN);
+  //   document.getElementById("stylizedName").style.backgroundImage = "none";
+  // }
 
   // Get Sections
   let gradeNo = 7;
@@ -135,7 +164,7 @@ HARight = document.getElementById("arrowRight");
 
 // Declaration for GO TO TOP BUTTON
 GTTButton = document.querySelector(".sendTopButton")
-GTTButton.style.display="block";
+GTTButton.style.display="flex";
 GTTBStyle = window.getComputedStyle(GTTButton)
 // console.log(`HEIGHT ${GTTBStyle.height.replace(/[^\d.]/g,'')} BOTTOM ${GTTBStyle.bottom.replace(/[^\d.]/g,'')}`);
 GTTBSize = innerHeight + parseFloat(GTTBStyle.height.replace(/[^\d.]/g,'')) + parseFloat(GTTBStyle.bottom.replace(/[^\d.]/g,''));
