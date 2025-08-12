@@ -295,6 +295,10 @@
   .constellationSection {
     flex-direction: column;
   }
+
+  #firstName {
+    font-size: 2em;
+  }
 }
 
 .pages {
