@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Yearbook PDF - Luminare</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="yearbook.css">
+    <script src="../../scripts/passwordValidation.js"></script>
+</head>
+<body>
+    <div class="navBar ver2">
+        <a href="../homepage/homepage.html">
+          <div class="logo">Luminare</div>
+        </a>
+        <div class="flex-spacer"></div>
+        <div class="navBar-hamburger-desktop">
+            <a href="../grads/grads_by_section.html">Graduates</a>
+            <a href="../indiv_spread/indiv_spread.html">Individuals</a>
+            <a href="../pdf/yearbook.html" class="selected">Yearbook PDF</a>
+            <!-- <a href="../faculty/faculty_units.html">Faculty</a>
+            <a href="../gallery/batch_gallery.html">Gallery</a> -->
+        </div>
+        <div class="navBar-hamburger-mobile">
+            <div class="navBar-hamburger-mobile-burger">
+                <div class="burger"></div>
+            </div>
+            <div class="navBar-hamburger-mobile-links">
+              <a href="../grads/grads_by_section.html">Graduates</a>
+              <!-- <a href="../faculty/faculty_units.html">Faculty</a> -->
+              <a href="../indiv_spread/indiv_spread.html">Individuals</a>
+              <a href="../pdf/yearbook.html" class="selected">Yearbook PDF</a>
+              <!-- <a href="../gallery/batch_gallery.html">Gallery</a> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="mainSection yearbookPage">
+        <div class="yearbookHero">
+            <h1 class="header-glow">Yearbook PDF</h1>
+            <p>Browse the yearbook in a two-page spread, or open the full PDF.</p>
+            <div class="yearbookActions">
+                <a class="pdfButton" href="yearbook2024-sample.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
+                <a class="pdfButton secondary" href="yearbook2024-sample.pdf" download>Download</a>
+            </div>
+        </div>
+        <div class="pdfSpread" aria-label="Yearbookpreview">
+            <iframe title="Luminare 2024 Yearbook PDF page 1" src="yearbook2024-sample.pdf#page=1&view=fitH" loading="lazy"></iframe>
+        </div>
+        <p class="pdfNote">Tip: use your browser zoom for closer reading.</p>
+    </div>
+</body>
+</html>

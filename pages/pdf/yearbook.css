@@ -1,0 +1,91 @@
+/*
+  Focused styles for yearbook.html
+*/
+.yearbookPage {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.yearbookHero {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.yearbookHero p {
+    padding-top: 16px;
+}
+
+.yearbookActions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 18px;
+    flex-wrap: wrap;
+}
+
+.pdfButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: var(--c-3);
+    color: var(--c-bg1);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.pdfButton:hover {
+    transform: translateY(-2px);
+}
+
+.pdfButton.secondary {
+    background: transparent;
+    color: var(--c-3);
+    border: 1px solid var(--c-3);
+    box-shadow: none;
+}
+
+.pdfSpread {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 16px;
+    justify-items: center;
+}
+
+.pdfSpread iframe {
+    width: min(840px, 100%);
+    aspect-ratio: 3 / 4;
+    border: 0;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.pdfNote {
+    text-align: center;
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 900px) {
+    .pdfSpread {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .yearbookPage {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .pdfSpread iframe {
+        width: 100%;
+    }
+}
