@@ -190,6 +190,8 @@ a {
     width:40px;
     padding-right: 0.2em;
     display:none;
+    align-items:center;
+    justify-content:center;
 }
 .navBar-hamburger-desktop a, .navBar-hamburger-mobile a {
     padding:10px 20px;
@@ -200,9 +202,17 @@ a {
 }
 .navBar-hamburger-mobile-burger {
     width:40px;
-    height:40px;
+    height: 40px;
     flex-basis:1;
     flex-shrink:0;
+    cursor:pointer;
+    background:transparent;
+    border:0;
+    padding:0;
+    touch-action:manipulation;
+    transform:translateY(-2px);
+    display: flex;
+    justify-content: center;
 }
 .navBar-hamburger-mobile-links a {
     width:100%;
@@ -220,7 +230,6 @@ a {
     background:rgba(0,0,0,0.5);
     background-size:300%;
     position:relative;
-    top:-7px;
     background-position:right;
     padding-bottom:10px;
     mask-image:linear-gradient(0deg, transparent 0%, black 5%, black 95%, transparent 100%);
@@ -228,6 +237,14 @@ a {
 .navBar-hamburger-mobile:hover .navBar-hamburger-mobile-links {
     opacity:1;
     pointer-events:all;
+}
+.navBar-hamburger-mobile:focus-within .navBar-hamburger-mobile-links {
+    opacity:1;
+    pointer-events:all;
+}
+.navBar-hamburger-mobile-burger:focus {
+    outline:2px solid rgba(255, 255, 255, 0.6);
+    outline-offset:3px;
 }
 
 .sectionCont {
@@ -396,8 +413,8 @@ body .facultySection {
 
 .burger {
     width:calc(100% - 5px);
+    margin-top: 7px;
     height:5px;
-    margin-top:7px;
     border-radius:5px;
     background-color:white;
     box-shadow:0 10px 0 white,
